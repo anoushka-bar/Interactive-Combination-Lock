@@ -396,12 +396,12 @@ function checkUnlock() {
 
   const allStopped = wheels.every(w => Math.abs(w.velocity) < 0.002);
 
-  // 🔥 Only trigger when alignment JUST happened
-  if (isAlignedNow && !wasAligned && allStopped) {
-    setTimeout(() => {
-      alert("Unlocked!");
-    }, 100);
-  }
+  // // 🔥 Only trigger when alignment JUST happened
+  // if (isAlignedNow && !wasAligned && allStopped) {
+  //   setTimeout(() => {
+  //     alert("Unlocked!");
+  //   }, 100);
+  // }
 
   // Update state for next frame
   wasAligned = isAlignedNow;
