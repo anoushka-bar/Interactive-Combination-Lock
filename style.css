@@ -10,7 +10,6 @@ body {
 canvas {
   background: #222;
   cursor: grab;
-  touch-action: none;
 }
 
 canvas:active {
