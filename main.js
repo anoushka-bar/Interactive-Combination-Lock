@@ -315,39 +315,23 @@ function getWheelUnderMouse(e) {
 
 let activeWheel = null;
 
-// canvas.addEventListener("mousedown", (e) => {
-//   activeWheel = getWheelUnderMouse(e);
-//   if (activeWheel) activeWheel.handleDown(e);
-// });
-
-// canvas.addEventListener("mousemove", (e) => {
-//   if (activeWheel) activeWheel.handleMove(e);
-// });
-
-// canvas.addEventListener("mouseup", () => {
-//   if (activeWheel) activeWheel.handleUp();
-//   activeWheel = null;
-// });
-
-// canvas.addEventListener("mouseleave", () => {
-//   if (activeWheel) activeWheel.handleUp();
-//   activeWheel = null;
-// });
-
-canvas.addEventListener("pointerdown", e => {
-  wheels.forEach(w => w.handleDown(e));
+canvas.addEventListener("mousedown", (e) => {
+  activeWheel = getWheelUnderMouse(e);
+  if (activeWheel) activeWheel.handleDown(e);
 });
 
-canvas.addEventListener("pointermove", e => {
-  wheels.forEach(w => w.handleMove(e));
+canvas.addEventListener("mousemove", (e) => {
+  if (activeWheel) activeWheel.handleMove(e);
 });
 
-canvas.addEventListener("pointerup", () => {
-  wheels.forEach(w => w.handleUp());
+canvas.addEventListener("mouseup", () => {
+  if (activeWheel) activeWheel.handleUp();
+  activeWheel = null;
 });
 
-canvas.addEventListener("pointerleave", () => {
-  wheels.forEach(w => w.handleUp());
+canvas.addEventListener("mouseleave", () => {
+  if (activeWheel) activeWheel.handleUp();
+  activeWheel = null;
 });
 
 // ----------------------
